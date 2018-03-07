@@ -52,8 +52,8 @@
     "Urban Exploration",
     "Wedding"
   ],
-  "frequency": 30,
-  "max_files": 3,
+  "frequency": 5,
+  "max_files": 100,
   "resolution": "1920x1080",
   "image_size": "2048",
   "api_endpoint": "https://api.500px.com/v1/"
