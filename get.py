@@ -5,6 +5,7 @@ __maintainer__ = "Riju"
 __email__ = "mailmeonriju@gmail.com"
 __status__ = "Development"
 
+import json
 import config
 import requests
 import consumer_key
@@ -27,6 +28,8 @@ def get():
 			)
 	response = requests.get(url)
 	response_json = response.json()
+	# print(json.dumps(response_json,indent=2))
+	# exit()
 	total_pages = response_json["total_pages"]
 	pages_queried = []
 	while cnt < config.config_json["max_files"]:
@@ -49,7 +52,7 @@ def get():
 		response_json = response.json()
 		for image in response_json["photos"]:
 			image_url_short = image["url"].split("/")[-1]
-			if image["hi_res_uploaded"] != 0 and not path.isfile(path.join("/home", consumer_key.current_user, ".linuxlwp/.cache/", image_url_short + "." + image["image_format"])) and not image["nsfw"] and cnt < config.config_json["max_files"]:
+			if image["hi_res_uploaded"] != 0 and not path.isfile(path.join("/home", consumer_key.current_user, ".linuxlwp/.cache/", image_url_short + "." + image["image_format"])) and (image["nsfw"] == (False if not 'show_nsfw' in config.config_json["show_nsfw"] else config.config_json["show_nsfw"])) and cnt < config.config_json["max_files"]:
 				print("Getting image: {0}".format(image_url_short))
 				# print(image["image_url"])
 				r_image = requests.get(image["image_url"][0])

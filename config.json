@@ -1,23 +1,10 @@
 {
   "categories": [
-    "Abstract",
-    "Aerial",
-    "Black and White",
-    "Commercial",
-    "Food",
-    "Journalism",
-    "Landscapes",
-    "Macro",
-    "Nature",
-    "Night",
-    "Sport",
-    "Still Life",
-    "Street",
-    "Transportation",
-    "Travel",
-    "Underwater",
-    "Urban Exploration",
-    "Wedding"
+    "Celebrities",
+    "Fashion",
+    "Film",
+    "Nude",
+    "People"    
   ],
   "stream": "editors",
   "available_categories": [
@@ -53,6 +40,7 @@
     "Wedding"
   ],
   "frequency": 5,
+  "show_nsfw": true,
   "max_files": 100,
   "resolution": "1920x1080",
   "image_size": "2048",
